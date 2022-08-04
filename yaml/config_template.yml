@@ -1,0 +1,26 @@
+platform: &platform
+    platform: android
+
+device_config: &device_config
+    ios:
+        platformName: 'ios'
+        platformVersion: '13.5'
+        deviceName: 'iPhone 11 Pro MT'
+        automationName: 'XCUITest'
+        appPackage: ''
+        appActivity: ''
+        noReset: 'True'
+        folder: '/Users/username/Library/Developer/Xcode/DerivedData/WordPress-bgx/Build/Products/Debug-iphonesimulator/WordPress.app'
+    android:
+        platformName: 'android'
+        platformVersion: '9'
+        deviceName: 'Pixel'
+        automationName: 'uiautomator2'
+        appPackage: 'org.wordpress.android'
+        appActivity: 'org.wordpress.android.ui.WPLaunchActivity'
+        noReset: 'True'
+        folder: '/Users/username/Desktop/and/wordpress.apk'
+
+production:
+    <<: *platform
+    <<: *device_config
