@@ -1,5 +1,8 @@
 # MOBILE AUTOMATION SETUP
 
+
+Use python version 3.9.0
+
 ### Environment Setup:
 
 * `cd mobiletestingframework`
