@@ -4,7 +4,7 @@ from settings import *
 from appium import webdriver
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture()
 def setup(request):
     global driver
     capabilities = {
@@ -18,8 +18,8 @@ def setup(request):
         'app': (CONFIG[platform]['folder']),
     }
     url = 'http://localhost:4723/wd/hub'
-    driver = webdriver.Remote(url, capabilities)
+    request.instance.driver = webdriver.Remote(url, capabilities)
 
     def teardown():
-        driver.quit()
+        request.instance.driver.quit()
     request.addfinalizer(teardown)
